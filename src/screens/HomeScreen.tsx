@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, TouchableOpacity, Text, Image, StyleSheet } from 'react-native';
+import {useFonts, Montserrat_700Bold, Montserrat_600SemiBold} from "@expo-google-fonts/montserrat";
 
 // @ts-ignore
 const HomeScreen = ({ navigation }) => {
@@ -13,16 +14,16 @@ const HomeScreen = ({ navigation }) => {
                 source={require('../../assets/backgroundHomePage.png')}
                 style={styles.photo}
             />
-            <Text>Savourez l'Amour, Une Recette à la Fois.</Text>
+            <Text style={styles.homeText}>Savourez l'Amour, Une Recette à la Fois.</Text>
             <TouchableOpacity
                 style={styles.buttonTwo}
                 onPress={() => navigation.navigate('SignIn')}>
-                <Text style={styles.buttonText}>Se connecter</Text>
+                <Text style={styles.buttonTextTwo}>Se connecter</Text>
             </TouchableOpacity>
             <TouchableOpacity
                 style={styles.buttonOne}
                 onPress={() => navigation.navigate('SignUp')}>
-                <Text style={styles.buttonText}>S'inscrire</Text>
+                <Text style={styles.buttonTextOne}>S'inscrire</Text>
             </TouchableOpacity>
         </View>
     );
@@ -52,11 +53,12 @@ const styles = StyleSheet.create({
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        backgroundColor: "#FF376D",
         width: 280,
         height: 50,
         borderRadius: 10,
         marginBottom: 50,
+        borderWidth: 1.2,
+        borderColor: "#FF376D"
     },
     buttonTwo: {
         display: "flex",
@@ -68,8 +70,24 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         marginBottom: 15,
     },
-    buttonText: {
+    buttonTextTwo: {
         color: "white",
+        fontFamily: "Montserrat_600SemiBold",
+        fontWeight: "600",
+    },
+    buttonTextOne: {
+        color: "#FF376D",
+        fontFamily: "Montserrat_600SemiBold",
+        fontWeight: "600",
+    },
+    homeText: {
+        marginBottom: 20,
+        fontSize: 26,
+        width: 280,
+        textAlign: "center",
+        fontFamily: "Montserrat_700Bold",
+        fontWeight: "700",
+        color: "#001665"
     }
 
 });
